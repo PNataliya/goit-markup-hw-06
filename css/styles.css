@@ -367,7 +367,6 @@ Button Заказать услугу - start
 .btn {
   display: inline-flex;
   align-items: center;
-  font-family: inherit;
   border: none;
   cursor: pointer;
   position: relative;
@@ -375,10 +374,7 @@ Button Заказать услугу - start
 }
 
 .hero-button {
-  font-family: inherit;
-  cursor: pointer;
   box-shadow: var(--box-shadow-button);
-  border-radius: 4px;
   padding: 10px 32px;
   font-weight: 700;
   font-size: 16px;
@@ -422,10 +418,11 @@ Button Заказать услугу - end
   position: absolute;
 top: 50%;
 left: 50%;
-
+padding: 40px;
+text-align: left;
 min-width: 528px;
 min-height: 581px;
-background: var(--wight-color);
+background-color: var(--wight-color);
 box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
 0px 1px 1px rgba(0, 0, 0, 0.14),
 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -472,14 +469,7 @@ transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 .form-data {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  height: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  background: var(--wight-color);
-  box-shadow: var(--box-shadow-card);
-  border-radius: 4px;
+ justify-content: center;
 }
 
 .form-box {
@@ -488,7 +478,6 @@ transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 10px;
-  padding-left: 41px;
 }
 
 .form-label {
@@ -500,21 +489,20 @@ transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-input {
-  font-family: inherit;
   width: 448px;
-  height: 40px;
   padding: 11px 12px 11px 42px;
+  outline: transparent;
+  color: var(--primary-text-color);
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
 }
 
 
 .form-icon {
   position: absolute;
-  left: 53px;
-  top: 29px;
+  left: 12px;
+  bottom: 11px;
   fill: var(--title-text-color);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -525,14 +513,15 @@ transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 20px;
-  padding-left: 41px;
+  width: 100%;
 }
 
 textarea {
-  width: 448px;
+  width: 100%;
   height: 120px;
   padding: 12px 16px;
   font-size: 12px;
+  outline: transparent;
   line-height: 1.16;
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
@@ -540,19 +529,18 @@ textarea {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
   resize: none;
 }
+
 
 .confirm-label {
   position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 30px;
-  margin-left: 54px;
   font-size: 14px;
   width: 423px;
-  padding-left: 22px;
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--primary-text-color);
@@ -586,8 +574,7 @@ textarea:not(:placeholder-shown){
   line-height: 1.15;
   text-align: center;
   letter-spacing: 0.03em;
-  margin: 0;
-  padding: 40px 40px 12px;
+  margin-bottom: 12px;
   color: var(--title-text-color);
 }
 
@@ -596,12 +583,14 @@ textarea:not(:placeholder-shown){
   margin-bottom: 0;
 }
 
-.confirm {
-  display: block;
+.confirm-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 443px;
   height: 24px;
   font-size: 14px;
-  margin: 20px 0 30px;
+  margin-bottom: 30px;
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--primary-text-color);
@@ -614,59 +603,57 @@ textarea:not(:placeholder-shown){
 }
 
 /* скрыть элемент checkbox по-умолчанию при этом сохранив все его свойства */
-.custom-input {
+.confirm-input {
   -wekit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
 
-.custom-input {
+.confirm-input {
   position: absolute;
   top: 5px;
   left: 1px;
 }
 
-.confirm-icon-none {
-  position: absolute;
-  top: 4px;
-  left: 0;
+
+.confirm-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 16px;
   height: 15px;
-}
-.confirm-icon {
-  position: absolute;
-  top: 4px;
-  left: 0;
-  width: 16px;
-  height: 15px;
+  margin-right: 8px;
   border: 2px solid var(--title-text-color);
   border-radius: 2px;
+}
+
+
+.confirm-icon {
   fill: var(--wight-color);
 }
 
 
-.custom-input:checked + .confirm-icon {
+.confirm-input:checked + .confirm-item {
   background-color: var(--accent-color);
   border: 2px solid var(--accent-color);
-  fill: var(--wight-color);
+  
 }
 
 /* =========================== */
 
 .form-submit {
-  font-family: inherit;
   padding: 10px 55px;
-  margin-left: 165px;
-  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 50px;
+  min-width: 200px;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
   text-align: center;
   color: var(--wight-color);
   background-color: var(--accent-color);
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-submit:hover,
@@ -995,6 +982,10 @@ SECTION Постоянные клиенты - end
 
 .footer-box:not(:last-child) {
 margin-right: 70px;
+}
+
+.footer-custom {
+  margin-left: auto;
 }
 
 .footer-title {
